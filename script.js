@@ -3,15 +3,15 @@ function addBook() {
       // Get input values
       const title = document.getElementById('title').value.trim();
       const author = document.getElementById('author').value.trim();
-      const year = document.getElementById('year').value.trim();
+      const year = document.getElementById('isbn').value.trim();
 
-      if (title === '' || author === '' || year === '') {
+      if (title === '' || author === '' || isbn === '') {
         alert('Please fill in all fields.');
         return;
       }
 
       // Get table body
-      const tableBody = document.getElementById('bookTable').getElementsByTagName('tbody')[0];
+      const tableBody = document.getElementByClassName('table table-striped').getElementsByTagName('tbody')[0];
 
       // Create new row
       const newRow = tableBody.insertRow();
@@ -25,7 +25,7 @@ function addBook() {
       // Add text to cells
       titleCell.textContent = title;
       authorCell.textContent = author;
-      yearCell.textContent = year;
+      yearCell.textContent = isbn;
 
       // Create and add Delete button
       const deleteBtn = document.createElement('button');
@@ -39,5 +39,5 @@ function addBook() {
       // Clear input fields
       document.getElementById('title').value = '';
       document.getElementById('author').value = '';
-      document.getElementById('year').value = '';
+      document.getElementById('isbn').value = '';
     }
